@@ -1,14 +1,21 @@
-\documentclass[a4paper, 10pt,landscape]{jsarticle}
+\documentclass[a4paper,papersize,10pt,landscape]{jsarticle}
 
-\special{dviout -y=A4L}
-\special{pdf: pagesize width 297truemm height 210truemm}
+
+
+\def\row#1#2#3#4#5#6#7{#1 & #2 & #3 &\hfil #4 &\hfil #5 & #6 & #7 \\ }
+\def\ppppppp{p{70mm}p{30mm}p{40mm}p{14mm}p{18mm}p{50mm}p{15mm}}
+\makeatletter
+\def\Hline{%
+\noalign{\ifnum0=`}\fi\hrule \@height 2pt \futurelet
+\reserved@a\@xhline}
+\makeatother
 
 
 \pagestyle{empty}
-%\topmargin=-20mm
-%\oddsidemargin=-5mm
-%\textwidth=200mm
-%\textheight=150mm
+\topmargin=-10mm
+\oddsidemargin=-10mm
+\textwidth=270mm
+\textheight=170mm
 
 \begin{document}
 
@@ -16,43 +23,77 @@
 
 \vskip1zh
 
-\hfil
-\begin{tabular}{|l|c|l|c|c|l|l|}\hline
-\hfil 意味	&科学量（日本語）	&\hfil 科学量（英語）	&量記号	&単位記号	&\hfil 単位（英語）\\ \hline
-物体の2点間の距離	&長さ	&length	&$\ell$	&m	&meter \\ \hline
-立体が占める空間の大きさ	&体積	&volume	&$V, v$	&m$^3$	&cubic meter \\ \hline
-交差する2直線の広がり具合	&角度	&angle	&$\theta$	&rad	&radian \\ \hline
-ものの大きさ	&体積	&volume	&$V$	&m$^3$	&cubic meter \\ \hline
+\textbf{第1章 物体の運動}\\
+\begin{tabular}{\ppppppp}\Hline
+  \hfil 意味	&\hfil 科学量（日本語）	&\hfil 科学量（英語）&\hfil 量記号	&\hfil 単位記号	&\hfil 単位（英語）	&\hfil 教科書 \\\hline
+  \row{物体の2点間の距離}{距離}{distance}{$x$}{m}{meter}{p.~9}
+  \row{現象の経過を表す量}{時間}{time}{$t$}{s}{second}{p.~9}
+  \row{単位時間当たりに移動する距離}{速度}{velocity}{$v$}{m/s}{meter per second}{p.~9}
+  \row{単位時間当たりに変化する速さ}{加速度}{acceleration}{$a$}{m/s$^2$}{meter per second per second}{p.~13}
+  \row{物体が落下するときの加速度(9.8m/s$^2$)}{重力加速度}{acceleration of gravity}{$g$}{m/s$^2$}{meter per second per second}{p.~25}
+\Hline
 \end{tabular}
+\vskip1zh
+\vfil
 
-
-
-\hfil
-\begin{tabular}{|l|c|l|c|c|l|l|l|}\hline
-  \hfil 意味	&科学量（日本語）	&\hfil 科学量（英語）	&量記号	&単位記号	&\hfil 単位（英語）	&教科書\\ \hline
-
-  物体の2点間の距離	&距離	&distance	&$x$	&m	&meter	&p.~9 \\ \hline
-  現象の経過を表す量	&時間	&time	&$t$	&s	&second	& p.~9 \\ \hline
-  単位時間当たりに移動する距離	&速度	&velocity	&$v$	&m/s	&meter per second	& p.~9 \\ \hline
-  単位時間当たりに変化する速さ	&加速度	&acceleration	&$a$	&m/s$^2$	&meter per second per second	& p.~13 \\ \hline
-  物体が落下するときの加速度(9.8m/s$^2$)	&重力加速度	&acceleration of gravity	&$g$	&m/s$^2$	&meter per second per second	& p.~25 \\ \hline
-  物体の運動を変化させる作用	&力	&force	&$F, f$	&N	&newton	& p.~34 \\ \hline
-  地球が物体を引く力	&重力	&gravity, weight	&$W, w$	&N	&newton	& p.~44 \\ \hline
-  物体の移動のしにくさ	&質量	&mass	&$M, m$	&kg	&kilogram	& p.~44, 59 \\ \hline
-  ばねを単位長さだけ伸縮させる力	&ばね定数	&spring constant	&$k$	&N/m	&newton per meter	& p.~47 \\ \hline
-  接触面から垂直に働く力	&垂直抗力	&normal reaction	&$N$	&N	&newton	& p.~49 \\ \hline
-  接触面で水平に働く抵抗力	&摩擦力	&friction	&$f$	&N	&newton	& p.~49 \\ \hline
-  摩擦力と垂直抗力との比	&摩擦係数	&coefficient of friction	&$\mu$	&---	&---	& p.~51 \\ \hline
-  接続点から糸の向きに働く力	&張力	&tension	&$T$	&N	&newton	& p.~65 \\ \hline\hline
-  力と時間との積	&力積	&impulse	&$I$	&N$\cdot$s	&newton second	& p.~77 \\ \hline
-  移動する運動の勢い（速さと質量の積）	&運動量	&momentum	&$p$	&kg$\cdot$m/s	&kilogram meter per second	& p.~78 \\ \hline
-  跳ね返りやすさ	&反発係数	&coefficent of restitution	&$e$	& ---	& ---	& p.~8, 91\\ \hline\hline
-  力とその力の向きに動いた距離との積	&仕事	&work	&$W$	&J	&joule	& p.~94 \\ \hline
-  単位時間あたりにする仕事	&仕事率	&power	&$P$	&W	&watt	& p.~98 \\ \hline
-  仕事をすることができる能力	&エネルギー	&energy	&$E, U, K$	&J	&joule	& p.~100 \\ \hline
-  運動している物体が持つエネルギー	&運動エネルギー	& kinetic energy	&$K$	&J	&joule	& p.~100 \\ \hline
-  位置の変化に伴うエネルギー	&位置エネルギー	& potential energy	&$U$	&J	&joule	& p.~104 \\ \hline
+\textbf{第2章 力と運動}\\
+\begin{tabular}{\ppppppp}\Hline
+  \hfil 意味	&\hfil 科学量（日本語）	&\hfil 科学量（英語）&\hfil 量記号	&\hfil 単位記号	&\hfil 単位（英語）	&\hfil 教科書 \\\hline
+  \row{物体の運動を変化させる作用}{力}{force}{$F, f$}{N}{newton}{p.~34}
+  \row{地球が物体を引く力}{重力}{gravity, weight}{$W, w$}{N}{newton}{p.~44}
+  \row{物体の移動のしにくさ}{質量}{mass	}{$M, m$}{kg}{kilogram}{p.~44, 59}
+  \row{ばねを単位長さだけ伸縮させる力}{ばね定数}{spring constant}{$k$}{N/m}{newton per meter}{p.~47}
+  \row{接触面から垂直に働く力}{垂直抗力}{normal reaction}{$N$}{N}{newton}{p.~49}
+  \row{接触面で水平に働く抵抗力}{摩擦力}{friction}{$f$}{N}{newton}{p.~49}
+  \row{摩擦力と垂直抗力との比}{摩擦係数}{coefficient of friction}{$\mu$}{---}{---}{p.~51}
+  \row{接続点から糸の向きに働く力}{張力}{tension}{$T$}{N}{newton}{p.~65}
+\Hline
 \end{tabular}
+\vskip1zh
+\vfil
+
+\textbf{第3章 運動量保存則}\\
+\begin{tabular}{\ppppppp}\Hline
+  \hfil 意味	&\hfil 科学量（日本語）	&\hfil 科学量（英語）&\hfil 量記号	&\hfil 単位記号	&\hfil 単位（英語）	&\hfil 教科書 \\\hline
+  \row{力と時間との積}{力積}{impulse}{$I$}{N$\cdot$s}{newton second}{p.~77}
+  \row{移動する運動の勢い（速さと質量の積）}{運動量}{momentum}{$p$}{kg$\cdot$m/s}{kilogram meter per second}{p.~78}
+  \row{跳ね返りやすさ}{反発係数}{coefficent of restitution}{$e$}{---}{---}{p.~87, 91}
+\Hline
+\end{tabular}
+\vskip1zh
+\vfil
+
+\textbf{第4章 力学的エネルギー保存則}\\
+\begin{tabular}{\ppppppp}\Hline
+  \hfil 意味	&\hfil 科学量（日本語）	&\hfil 科学量（英語）&\hfil 量記号	&\hfil 単位記号	&\hfil 単位（英語）	&\hfil 教科書 \\\hline
+  \row{力とその力の向きに動いた距離との積}{仕事}{work}{$W$}{J}{joule}{p.~94}
+  \row{単位時間あたりにする仕事}{仕事率}{power}{$P$}{W}{watt}{p.~98}
+  \row{仕事をすることができる能力}{エネルギー}{energy}{$E, U, K$}{J}{joule}{p.~100}
+  \row{物体の運動に伴うエネルギー}{運動エネルギー}{kinetic energy}{$K$}{J}{joule}{p.~100}
+  \row{位置の変化に伴うエネルギー}{位置エネルギー}{potential energy}{$U$}{J}{joule}{p.~104}
+\Hline
+\end{tabular}
+\vskip1zh
+\vfil
+
+\textbf{第5章 等速円運動と単振動}\\
+\begin{tabular}{\ppppppp}\Hline
+  \hfil 意味	&\hfil 科学量（日本語）	&\hfil 科学量（英語）&\hfil 量記号	&\hfil 単位記号	&\hfil 単位（英語）	&\hfil 教科書 \\\hline
+  \row{力とその力の向きに動いた距離との積}{仕事}{work}{$W$}{J}{joule}{p.~94}
+\Hline
+\end{tabular}
+\vskip1zh
+\vfil
+
+\textbf{第6章 万有引力の法則}\\
+\begin{tabular}{\ppppppp}\Hline
+  \hfil 意味	&\hfil 科学量（日本語）	&\hfil 科学量（英語）&\hfil 量記号	&\hfil 単位記号	&\hfil 単位（英語）	&\hfil 教科書 \\\hline
+  \row{力とその力の向きに動いた距離との積}{仕事}{work}{$W$}{J}{joule}{p.~94}
+\Hline
+\end{tabular}
+\vskip1zh
+\vfil
+
 
 ＊英語の綴りは、電子辞書で発音も確認してください．
 ＊量記号は斜体（イタリック体）で書きます．
@@ -60,6 +101,15 @@
 ＊単位記号は立体（ローマン体）で書きます．
 
 ＊人命由来の単位記号は大文字で書き始めます．しかし、綴りの時には小文字で書きます．
+
+\hfil
+\begin{tabular}{|p{70mm}|p{35mm}|p{40mm}|p{20mm}|p{20mm}|p{50mm}|p{15mm}|}\hline
+\hfil 意味	&科学量（日本語）	&\hfil 科学量（英語）	&量記号	&単位記号	&\hfil 単位（英語）\\ \hline
+物体の2点間の距離	&長さ	&length	&$\ell$	&m	&meter \\ \hline
+立体が占める空間の大きさ	&体積	&volume	&$V, v$	&m$^3$	&cubic meter \\ \hline
+交差する2直線の広がり具合	&角度	&angle	&$\theta$	&rad	&radian \\ \hline
+ものの大きさ	&体積	&volume	&$V$	&m$^3$	&cubic meter \\ \hline
+\end{tabular}
 
 
 
