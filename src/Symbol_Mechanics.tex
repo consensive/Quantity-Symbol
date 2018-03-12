@@ -1,16 +1,16 @@
-\documentclass[a4paper,papersize,10pt,landscape]{jsarticle}
-
+\documentclass[a4paper, twoside, papersize, 10pt]{jsarticle}
 
 %ページ設定・レイアウト設定
+%A4縦(210*297mm)
 %1 pt = 1/72 inch
 %1 inch = 25.4 mm
 
-\setlength{\oddsidemargin}{-30pt}
-%\setlength{\evensidemargin}{-28.8pt}
-
-\setlength{\textwidth}{270mm}
-%\setlength{\textwidth}{\paperwidth}
-%\addtolength{\textwidth}{-70pt}
+%綴側余白30mm
+%逆側余白10mm
+\setlength{\oddsidemargin}{4.6mm}%綴側余白 25.4mm+4.6mm = 30mm
+\setlength{\evensidemargin}{-15.4mm}%逆側余白 25.4mm-15.4mm=10mm
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-40mm}
 
 \setlength{\topmargin}{-55pt}
 \setlength{\headheight}{17pt}
@@ -20,20 +20,24 @@
 \addtolength{\textheight}{-82pt}%731pt-42*2
 
 
+
 %読み込むパッケージ
 \usepackage{lastpage}% 全ページ数を出力するため
 \usepackage{fancyhdr}% ヘッダー・フッターを簡便に作成
 \usepackage[dvips]{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
+\usepackage{lscape}
 
 
-%ヘッダとフッタ
+%ヘッダ・フッタ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\rfoot{\jobname{}.tex (2017-02-10)}
-\rhead[RO]{\thepage{}/{}\pageref{LastPage}}
+\fancyhead[RO,LE]{\textsf{\thepage{}/{}\pageref{LastPage}}}
+\fancyfoot[RO,LE]{\textsf{\jobname{}.tex (2018-03-12)}}
+\fancyhead[LO]{} %本文中で \def\title{}すべし
 \cfoot{}
+\renewcommand{\headrulewidth}{0pt}
 
 
 
@@ -54,6 +58,7 @@
 
 \begin{document}
 
+\begin{landscape}
 \textbf{\Large 量記号と単位 -- 『力学I』（大日本図書）}
 \vskip1zh
 
@@ -94,8 +99,8 @@
 \Hline
 \end{tabular}
 
-
-\newpage
+\vfilneg
+\newpage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{第4章 力学的エネルギー保存則}\\
 \begin{tabular}{\ppppppp}\Hline
   \hfil 意味	&\hfil 科学量（日本語）	&\hfil 科学量（英語）&\hfil 量記号	&\hfil 単位記号	&\hfil 単位（英語）	&\hfil 教科書 \\\hline
@@ -137,5 +142,5 @@
 
 ＊人命由来の単位記号は大文字で書き始めます．しかし、綴りの時には小文字で書きます．
 
-
+\end{landscape}
 \end{document}
